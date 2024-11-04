@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import useAuth from '../hooks/useAuth';
 import { useHistory } from 'react-router-dom';
-import { useEffect } from 'react';
+
 
 const initialFormData = {
   username: '',
@@ -11,15 +11,12 @@ export default function Login() {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
+
   } = useForm({
     defaultValues: initialFormData,
     mode: 'onChange',
   });
-  const username = watch(initialFormData.username);
-  useEffect(() => {
-    console.log(username);
-  }, [username]);
+
   const { login } = useAuth();
   const history = useHistory();
 

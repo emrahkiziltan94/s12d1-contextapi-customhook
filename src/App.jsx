@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import './App.css';
 
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Login from './pages/Login';
 import Home from './pages/Home';
@@ -15,10 +14,10 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <Login />
           </Route>
-          <Route path="/home">
+          <Route exact path="/home">
             <Home />
           </Route>
         </Switch>
